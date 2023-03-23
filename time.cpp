@@ -214,9 +214,20 @@ int main()
     int n = getInteger();
     int* a = new int[n];
     generateArray(a, n);
-    char select;
-    int choose;
-    int flag = 1; // change to 0 if you want to print the array after sorted
+
+    char select,
+         select1;
+    int choose,
+        flag = 0; 
+        
+    do{
+        cout << "Would you like to print out the array after sorted? (y/n): ";
+        cin >> select1;
+    }while((select1 != 'Y' && select1 != 'y' && select1 != 'N' && select1 != 'n') && cout << "Please type 'y' or 'n'." << endl);
+
+    if (select1 == 'n' || select1 == 'N')
+        flag = 1; // change to 0 if you want to print the array after sorted
+
     do{
         Menu();
         cout << "Please choose an algorithm: ";
